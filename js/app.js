@@ -8,13 +8,11 @@
     ["/feeding/", "사료"],
     ["/growth/", "성장"],
     ["/records/events.html", "이력"],
-    ["/resources/korea/", "자료"],
-    ["/iot/", "IoT"],
-    ["/ai/", "AI"]
+    ["/resources/korea/", "자료"]
   ];
 
   function base() {
-    const path = location.pathname.replace(/\\/+$/, "");
+    const path = location.pathname.replace(/\/+$/, "");
     const i = path.indexOf("/hanwoo");
     if (i >= 0) return path.slice(0, i + 7);
     return "";
@@ -34,10 +32,10 @@
   if (header) {
     const here = location.pathname.replace(/index\.html$/, "");
     header.innerHTML =
-      '<div class="brand"><a href="' + HANWOO.url("/") + '">HANWOO</a></div><nav>' +
+      '<div class="brand"><a href="' + HANWOO.url("/") + '">HANWOO</a><small>농장 대장</small></div><nav>' +
       nav.map(function (item) {
         const href = HANWOO.url(item[0]);
-        const active = here.endsWith(item[0].replace(/\/$/, "")) || here.indexOf(item[0]) >= 0 && item[0] !== "/";
+        const active = here.endsWith(item[0].replace(/\/$/, "")) || (item[0] !== "/" && here.indexOf(item[0]) >= 0);
         return '<a class="' + (active ? "active" : "") + '" href="' + href + '">' + item[1] + "</a>";
       }).join("") +
       "</nav>";
