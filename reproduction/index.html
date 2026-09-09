@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>번식관리</title>
+  <link rel="stylesheet" href="../css/hanwoo.css">
+</head>
+<body>
+  <header class="app" data-app-header></header>
+  <main class="wrap">
+    <h1>번식관리</h1>
+    <div class="grid">
+      <a class="card" href="estrus.html"><h3>발정</h3><p>발정 확인 기록</p></a>
+      <a class="card" href="ai.html"><h3>인공수정</h3><p>정액 · 수정 일지</p></a>
+      <a class="card" href="pregnancy.html"><h3>임신</h3><p>초음파 · 임신조사</p></a>
+      <a class="card" href="calving.html"><h3>분만</h3><p>태위 · 난산 대응</p></a>
+    </div>
+    <h2>최근 번식 기록</h2>
+    <div id="repro-list"></div>
+  </main>
+  <script src="../js/app.js"></script>
+  <script src="../js/reproduction.js"></script>
+  <script>renderReproEvents();</script>
+</body>
+</html>
