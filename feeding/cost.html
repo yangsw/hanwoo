@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사료비 계산</title>
+  <link rel="stylesheet" href="../css/hanwoo.css">
+</head>
+<body>
+  <header class="app" data-app-header></header>
+  <main class="wrap">
+    <h1>사료비 계산</h1>
+    <form class="stack" onsubmit="event.preventDefault(); calcRationCost();">
+      <label>두당 일일 급여 kg<input id="kg" type="number" value="8"></label>
+      <label>원/kg<input id="price" type="number" value="520"></label>
+      <label>두수<input id="head" type="number" value="10"></label>
+      <button type="submit">계산</button>
+      <p id="cost-out" class="kpi"></p>
+    </form>
+  </main>
+  <script src="../js/app.js"></script>
+  <script src="../js/feeding.js"></script>
+</body>
+</html>

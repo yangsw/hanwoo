@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>농장 대시보드</title>
+  <link rel="stylesheet" href="../css/hanwoo.css">
+</head>
+<body>
+  <header class="app" data-app-header></header>
+  <main class="wrap">
+    <h1>농장 대시보드</h1>
+    <p class="sub">샘플 개체 4두 기준. JSON을 교체하면 실제 현황으로 바뀍니다.</p>
+    <div class="grid" id="kpis"></div>
+    <h2>최근 이력</h2>
+    <div id="recent"></div>
+  </main>
+  <script src="../js/app.js"></script>
+  <script>
+    (async function () {
+      const cattle = await HANWOO.loadJSON("cattle.json");
+      const rec = await HANWOO.loadJSON("records.json");
+      const pregnant = cattle.filter(c => c.status === "임신").length;
+      const ship = cattle.filter(c => c.status === "출하예정").length;
+      document.getElementById("kpis").innerHTML = [
+        ["사육 두수", cattle.length],
+        ["임신", pregnant],
+        ["출하 예정", ship],
+        ["기록 건수", rec.length]
+      ].map(x => '<div class="card"><h3>' + x[0] + '</h3><div class="kpi">' + x[1] + '</div></div>').join("");
+      document.getElementById("recent").innerHTML = rec.slice().reverse().slice(0,5).map(r =>
+        '<div class="card"><h3>' + r.title + '</h3><p class="sub">' + r.date + ' · ' + r.cattle_id + '</p><p>' + r.note + '</p></div>'
+      ).join("");
+    })();
+  </script>
+</body>
+</html>

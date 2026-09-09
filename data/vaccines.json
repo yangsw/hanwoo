@@ -1,0 +1,6 @@
+[
+  {"name":"IBRV / BVD","target":"성우","schedule":"연 1회 + 부스터","note":"호흡기 호흡"},
+  {"name":"구제역","target":"전 개체","schedule":"현장·지역 접종 일정","note":"법정 접종"},
+  {"name":"브루셀라","target":"번식우","schedule":"검사 전 확인","note":"양성 검사"},
+  {"name":"클로스트리디움","target":"송아지","schedule":"출생 후 프로토콜","note":"설사·탈수 예방"}
+]

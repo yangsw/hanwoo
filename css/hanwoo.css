@@ -1,0 +1,55 @@
+:root {
+  --bg: #1a1c1a;
+  --panel: #242824;
+  --panel-2: #2c322c;
+  --ink: #f3eee4;
+  --muted: #a8b0a4;
+  --line: #3a4238;
+  --sage: #8fa384;
+  --chestnut: #8b5a3c;
+  --ivory: #e8dcc8;
+  --warn: #c4a35a;
+  --bad: #c16b5a;
+  --ok: #6f9e72;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Pretendard", "Noto Sans KR", sans-serif; line-height: 1.5; }
+a { color: var(--ivory); text-decoration: none; }
+a:hover { color: #fff; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+header.app {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  border-bottom: 1px solid var(--line); padding: 0.85rem 1rem; background: #141614;
+  position: sticky; top: 0; z-index: 20;
+}
+header.app .brand { font-weight: 700; letter-spacing: 0.04em; color: var(--ivory); }
+header.app nav { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; font-size: 0.92rem; }
+header.app nav a.active { color: var(--sage); }
+h1 { font-size: 1.45rem; margin: 1.2rem 0 0.4rem; }
+h2 { font-size: 1.15rem; margin: 1.4rem 0 0.6rem; color: var(--ivory); }
+.sub { color: var(--muted); margin: 0 0 1.2rem; }
+.grid { display: grid; gap: 0.85rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1rem;
+}
+.card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.kpi { font-size: 1.6rem; font-weight: 700; color: var(--sage); }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.55rem 0.45rem; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; }
+.tag { display: inline-block; padding: 0.1rem 0.45rem; border-radius: 999px; font-size: 0.75rem; background: var(--panel-2); color: var(--ivory); }
+.tag.ok { background: #243326; color: #b7d7b8; }
+.tag.warn { background: #3a3220; color: #e6d09a; }
+.tag.bad { background: #3a2420; color: #efb4a8; }
+ul.links { padding-left: 1.1rem; }
+ul.links li { margin: 0.3rem 0; }
+footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.85rem; }
+form.stack { display: grid; gap: 0.65rem; max-width: 420px; }
+label { display: grid; gap: 0.25rem; font-size: 0.88rem; color: var(--muted); }
+input, select, textarea {
+  background: #151715; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem 0.6rem;
+}
+button {
+  background: var(--chestnut); color: #fff; border: 0; border-radius: 8px; padding: 0.55rem 0.9rem; cursor: pointer;
+}
+button.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }

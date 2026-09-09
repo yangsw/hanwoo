@@ -1,0 +1,6 @@
+[
+  {"name":"티모조","type":"조조사료","price_krw":380,"cp":8.1,"tdn":56},
+  {"name":"배합사료(비육)","type":"배합","price_krw":520,"cp":14.5,"tdn":72},
+  {"name":"옥수수","type":"농후","price_krw":410,"cp":8.8,"tdn":70},
+  {"name":"배합사료(번식)","type":"배합","price_krw":495,"cp":16.0,"tdn":68}
+]
